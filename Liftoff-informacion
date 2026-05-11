@@ -20,7 +20,7 @@ libre de armar tu propio dron mesclando y probando componente.
 -uso sin riesgos: al ser un entorno virtual puedes volar tu dron sin riesgo a romperlo por colisionar con algun obstaculo lo cual
 te otorga mucho margen de error y aprendizaje
 
-
+-el simulador no es tan exigente
 
 desventajas:
 
@@ -38,6 +38,14 @@ radiotransmisor FPV: es el termino usado para referirse a los mandos originales/
 
 FPV: mas usado para referirse a los drones con camara, por el termino FPV(first person view/vista en primera persona)
 el cual sirve para tener una mejor vista de tu dron o el caso de poseer un vr compatible, tener una experiencia mas inmersiva
+
+tipos de vuelo
+
+.level: vuelo siempre estable, no es capaz de dar vueltas acrobaticas
+
+.horizon: libre con asistencia de estabilizacion al hacer acrobacias
+
+.acro: uso de manejo libre sin restricciones ni estabilizador automatico
 
 
 
