@@ -1,0 +1,31 @@
+gemelo virtual:
+
+replicar algo en un entorno virtual, capaz de servir como prototipo
+semi-exacto de algo real
+
+
+
+
+cosas:
+
+1. Ansys Twin Builder
+2. Air Sim = fisica del dron
+3. NVIDIA Omniverse - NVIDIA Isaac sim = ¿gemelo digital industrial?
+4. Unreal Engine = simulacion visual
+5. blender = modelado 3D
+6 ANSYS = fisica/materiales
+
+comportamiento necesario:
+
+.detectar diferentes materiales
+.fenomenos naturales
+.temperatura
+.fisica coherente
+
+habilidades:
+
+modelado 3D
+conocimiento de caracteristicas de objetos
+programacion intermedia
+manejo de datos
+
