@@ -2,9 +2,111 @@ unity:
 
 dia 1:
 
--creacion de un cubo con controles basicos y gravedad simple
--simulacion basica de lluvia
--reaccion exitosa de colision entre objeto y lluvia
+-creacion de un cubo con controles basicos y gravedad simple:
+creando un objeto(cubo) en unity
+llendo al menu de caracteristicas del objeto, ir a "modificadores"
+agregar 
+Rigidbody(para la gravedad basica que otorga  unity) 
+box collider(para que el objeto tenga colosiones y no caiga al vacio con la gravedad)
+
+y por ultimo con la ayuda de un codigo en C# agregamos la funcion del movimiento
+
+script:
+
+--------------------------------------------------------------------------------------------------------------
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class playerMovement : MonoBehaviour
+{
+
+    //variables que se pueden modificar en el inspector 
+    // float decimal - int Numero entero - Bool condicional - String caracteres
+    public float velocidad = 2f;
+    public float fuerzaSalto = 5f;
+    public float velocidadTurbo = 10f;
+  
+    
+    
+    public bool enSuelo = true;
+
+    private Rigidbody rb; //Se usa para guardar el componente Rigidbody del player
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();  // busque el componente del objeto y lo guarda en rb
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        //detectar el nitro del personaje
+
+        if (Input.GetKey(KeyCode.LeftShift))
+		{
+            velocidad = velocidadTurbo;
+		}
+        else
+        {
+            velocidad = 2f;
+        }
+
+        // movimiento
+        float moverX = Input.GetAxis("Horizontal"); // Detecta teclas A y D - Flechas <izquierda y derecha>
+        float moverZ = Input.GetAxis("Vertical"); // Deteca teclas W y S - Flechas arriba y abajo
+
+        Vector3 movimiento = new Vector3(moverX, 0, moverZ);
+        transform.Translate(movimiento * velocidad * Time.deltaTime); // hace que el movimiento sea igual independiente de los fps 
+
+        /* if (Input.GetKey(KeyCode.LeftShift))
+        {
+            velocidad = 5f; 
+        }
+        else
+        {
+            velocidad = 2f;
+		} */
+
+        // salto - Mueve al personaje 
+        if (Input.GetKeyDown(KeyCode.Space) && enSuelo) // condicional de si se preciona la tecla ESPACIO y que el jugador este tocando el suelo (&& = y ademas)
+        {
+            rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse); // Agrega fuerza hacia arriba 
+            enSuelo = false;
+        }
+    }
+
+	private void OnCollisionEnter(Collision collision) //detecta si nuestro jugador toca algo 
+	{
+		//Aca va a detectar cuando toca el suelo
+        if (collision.gameObject.CompareTag("Suelo")) //revisa si el gameobject que toca tiene el tag Suelo
+        {
+            enSuelo = true; //si tiene el tag suelo, pasa a true por lo que puede volver a saltar 
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-simulacion basica de lluvia:
+
+en el menu de objetos: click derecho -> effects -> particle system
+
+.......
+.......
+.......
+.......
+.......
+
+
+-reaccion exitosa de colision entre objeto y lluvia:
+
+activar el menu de colision y force-collision
+
+
 
 unreal engine:
 
@@ -13,10 +115,56 @@ unreal engine:
 
 dia 2:
 
-modelo robusto de dron
-estabilidad robusta
+
+-modelo robusto de dron:
+crear:
+shift + A = menu de agregar figuras a la escena
+en el menu -> mesh -> cube
+
+crear una piramide con un cuadrado de base
+eliminar 3 de los cuatro vertices de la cara alta del cubo
+crear caras entre el vertices inferiores y el unico superior que dejamos
+y queda nuestra piramide, solo queda centrar la ubicacion del vertice superior
+
+poner la piramide en la esquina superior de nuestro cubo original y asi simulando un ala de dron
+para ahorrar recursos usamos el modificador "mirror"
+en el menu de la derecha: modificadores -> agregar modificadores -> mirror
+
+en el menu de mirror:
+
+mirror object: seleccionar al cubo como objeto de referencia
+y activar el eje X, Y para que se refleje en las cuatro esquinas del cubo
+
+
+-estabilidad robusta:
+añadiendole el codigo C# a nuestro modelo de dron de turno, lograremos que se autoestabilice cuando reciba
+algun golpe que altere su estabilidad
+
+
+script:
+--------------------------------------------------------------------------------------------------------------------
+
+
+using UnityEngine;
+
+public class Estabilizador : MonoBehaviour
+{
+    public float velocidadEstabilizacion = 5f;
+
+    void FixedUpdate()
+    {
+        Quaternion rotacionDeseada = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            rotacionDeseada,
+            velocidadEstabilizacion * Time.fixedDeltaTime
+        );
+    }
+}
 
 
 
 
 
+-------------------------------------------------------------------------------------------------------------------
