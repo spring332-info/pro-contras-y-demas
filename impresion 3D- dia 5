@@ -1,0 +1,33 @@
+preparar:
+
+elegir un programa para modelar tu objeto a imprimir en 3D4
+
+en mi caso tinkercad
+
+modelar:
+
+hacer un objeto fisicamente funcional para que se pueda 
+imprimir sin caerse
+(a la hora de imprimir tampien se pueden incluir
+soportes para que nos se caiga)
+
+exportar el archivo en .stl
+
+imprimir:
+
+descargar la aplicacion/software asociado a la impresora 3D
+
+verificar y ajustar caracteristicas:
+
+capas: mas o menos preciso
+relleno
+trazado de impresion
+configuracion de tipo de filamento
+regular tamaño final de modelo 3D
+soportes
+
+verificar tiempo de impresion segun sus caracteristicas
+mandar a imprimir
+
+
+
