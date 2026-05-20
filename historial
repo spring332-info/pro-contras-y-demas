@@ -163,8 +163,51 @@ public class Estabilizador : MonoBehaviour
     }
 }
 
-
-
-
-
 -------------------------------------------------------------------------------------------------------------------
+
+
+
+dia 6:
+
+choqué bruscamente con problemas multiples asi que decidi dividir las tareas
+a realizar, aprender y ejecutar
+
+empeze ignorando unity y centrandome en blender para modelar objetos en 3D
+y averiguar como puedo o si es posible, manipular la malla de colision
+(lo cual es necesario manipular para darle fisicas al dron)
+
+y dejar a blender de lado para usar en unity un simple cubo sin curvas ni formas
+complejas para ser el prototipo indefinido para programar todas las fisicas base de
+mi dron
+(lo cual evita errores de compatibilidad al exportar un modelo de blender a unity,
+ya que sus ejes de orientacion basicos son distintos: blender: x (->), y(<-), z(^); unity: x(->), z(<-), y(^)  )
+
+blender:
+
+atajos para modelar en blender:
+
+
+object mode:
+
+shift + a = añadir objetos
+
+s = modificar escala  \
+                       + X, Y o Z = restringuir la modificacion a un solo eje
+g = mover objeto      /
+
+
+edit mode:
+
+1: modo vertices
+2: modo bordes(edges)
+3: modo caras(face)
+
+
+
+
+
+
+
+
+
+
