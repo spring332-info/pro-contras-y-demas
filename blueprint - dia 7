@@ -1,0 +1,14 @@
+Blueprint
+
+motor grafico:
+
+blueprint es una alternativa comoda para codear acciones y reacciones a travez de un sistema de nodos, sin necesidad de entrar en
+contacto directo con el codigo, es mas directo, mas facil de entender que una linea de codigo si eres principiante.
+
+se puede usar en simultaneo el codigo directo y los blueprints
+
+
+concepto original:
+
+como dice su nombre blueprint/impresion azul, es un metodo para imprimir un sistema de planos para contruir algun
+tipo de arquitectura definida(puente,casa,mueble,tuberias,sistema electrico,sistema computacional, etc)
