@@ -52,6 +52,20 @@ Input axis (moveRight/moveForward):
 son dos grupos de variables cada uno para encargarse del movimiento horizontal y vertical
 w, s= moveForward.  a, d= moveRight
 
+como declarar una/s tecla/s en una variable?
+usando el menu de la barra superior entras a edit->Project Settings.
+en la nueva ventana en el menu de la izquierda en la categoria "Engine" buscas "Input"
+donde dice Axis Mappings puede agregar variables y que tipo de tecla o teclas activaran esa variable
+por ejemplo en mi caso hice lo siguiente:
+
+moveforward
+  W   scale  1000
+  S   scale -1000
+moveright
+  D   scale  1000
+  A   scale -1000
+
+
 Input axis lo que hace esque cuando se puse la tecla definida en la variable, se ejecute algo, lo cual podemos ver que se ejecuta en los nodos es el "add force"
 
 add force:
@@ -61,6 +75,14 @@ target y force; target se encarga de identificar a quien se le hace la fuerza o 
 force se encarga de indicar hacia que direccion en x, y, z se movera el objeto
 
 Get Actor Right Vector: 
+
+
+
+
+
+X:
+es un apartado donde juntas dos o mas tipos de variables y las multiplicas, en este caso multiplicamos por una variable
+de tipo float gracias que se pueden agregar decimales y eso nos da mas precision que una variable de tipo integer(entero)
 
 
 
