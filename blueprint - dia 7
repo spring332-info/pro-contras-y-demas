@@ -31,6 +31,53 @@ https://youtu.be/guTgup_EJ68?si=jsxfXTW-lObGrWLW
 
 
 
+movimiento medianamente logrado luego de hacer un sistema de nodos tal que asi
+
+
+                                                                                   add force
+InputAxis (moveRight/moveForward)                                                  target primitive component
+                    >------------------------------------------------------------->  
+      axis value   >--\                                cubo ----------------------> target
+                       \------------\                                   _---------> Force
+                            _------->  x  --------------\              /
+                           /                              x   --------/
+Get Actor Right Vector    /      variable float >-------/
+ target is actor         /                 
+         return value >-/
+
+
+que representa cada bloque?
+
+Input axis (moveRight/moveForward):
+son dos grupos de variables cada uno para encargarse del movimiento horizontal y vertical
+w, s= moveForward.  a, d= moveRight
+
+Input axis lo que hace esque cuando se puse la tecla definida en la variable, se ejecute algo, lo cual podemos ver que se ejecuta en los nodos es el "add force"
+
+add force:
+se encarga de modificar la posicion del un objeto gracias a la orden de un nodo anterior(en este caso "InputAxis")
+cuenta con 5 punto de entrada pero solo usamos 3, el de que lo hace funcionar siendo el cable superior y los otros siendo
+target y force; target se encarga de identificar a quien se le hace la fuerza o la modificacion de posicion
+force se encarga de indicar hacia que direccion en x, y, z se movera el objeto
+
+Get Actor Right Vector: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
